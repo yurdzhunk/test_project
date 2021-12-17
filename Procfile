@@ -1,1 +1,1 @@
-web: gunicorn decbank.wsgi --log-file -
+web: gunicorn generator.wsgi --log-file -
