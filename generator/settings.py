@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-40ed#$c0ndw(@bl7pfsxp#2hp3m!m86v!qi+yk4!p8l-06t2lt
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.01',
+    '127.0.0.1',
     'csv-random-generator.herokuapp.com',
 ]
 
