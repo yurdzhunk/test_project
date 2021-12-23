@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'csv_creator/style_csv.css' %}">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<form>
+  <p class="label-name">CSV-file GENERATOR</p>
+  <label>
+    <p class="label-txt">ENTER NUMBER OF RAWS</p>
+    <input type="text" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  <label>
+    <p class="label-txt">ENTER NUMBER OF COLUMNS</p>
+    <input type="text" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  <label>
+    <p class="label-txt">ENTER YOUR NAME OF FILE</p>
+    <input type="text" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+  </label>
+  <div>
+      <button type="submit">submit</button>
+  </div>
+</form>
+
+</body>
+</html>
