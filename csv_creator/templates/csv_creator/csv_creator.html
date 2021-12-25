@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'csv_creator/style_csv.css' %}">
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -12,6 +10,8 @@
 
 <body>
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'csv_creator/style_csv.css' %}">
 <form>
   <p class="label-name">CSV-file GENERATOR</p>
   <label>
