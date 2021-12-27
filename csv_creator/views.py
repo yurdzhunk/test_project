@@ -6,8 +6,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 
-result_files_path = 'csv_generator/csv_files/'
-
 columns_names_types = {
     1: 'Name',
     2: 'Surname',
@@ -70,7 +68,7 @@ def generate_csv(request):
 
     columns_numbers = columns.split(',')
     columns_numbers = [int(number) for number in columns_numbers]
-    columns_names = [columns_names_types[number][0] for number in columns_numbers]
+    columns_names = [columns_names_types[number] for number in columns_numbers]
 
     with open(filename, 'w', newline='') as write_obj:
         csv_writer = csv.DictWriter(write_obj, columns_names)
@@ -81,11 +79,14 @@ def generate_csv(request):
                 name: random_getter(name)
                 for name in columns_names
             }
+            print(dict_to_write)
             csv_writer.writerow(dict_to_write)
 
-        mime_type, _ = mimetypes.guess_type(filename)
+    mime_type, _ = mimetypes.guess_type(filename)
 
-        response = HttpResponse(write_obj, content_type=mime_type)
-        response['Content-Disposition'] = "attachment; filename=%s" % filename
+    read_obj = open(filename, 'r')
 
-        return response
+    response = HttpResponse(read_obj, content_type=mime_type)
+    response['Content-Disposition'] = "attachment; filename=%s" % filename.split('/')[-1]
+
+    return response
