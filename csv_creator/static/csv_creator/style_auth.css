@@ -64,7 +64,9 @@ h2 {
 .button-try:active {
   opacity: .5;
 }
-
+.navbar-brand:hover{
+  color: #42c3ff;
+}
 
 
 /* STRUCTURE */

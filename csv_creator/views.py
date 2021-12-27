@@ -1,9 +1,9 @@
 import json
 
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login
-from django.core.exceptions import ValidationError
-from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+#from django.core.exceptions import ValidationError
+#from django.http import HttpResponse, HttpResponseNotFound
 
 
 def login_page(request):
@@ -16,6 +16,7 @@ def login_user(request):
 
     user = authenticate(request, username=username, password=password)
     if user is not None:
+        login(request, user)
         context = {}
         context['username'] = username
         return render(request, 'csv_creator.html', context)
@@ -24,3 +25,7 @@ def login_user(request):
         #return HttpResponse(html)
     else:
         return render(request, 'reauth.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('/')
