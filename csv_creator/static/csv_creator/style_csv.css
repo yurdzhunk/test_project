@@ -86,3 +86,10 @@ button:hover {
   background: #8BC34A;
   color: #ffffff;
 }
+
+input::placeholder {
+  color: rgba(30, 144, 255, 0.3);
+  font-size: 1.2em;
+  font-style: italic;
+  position: center;
+}

@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from csv_creator.views import login_user, login_page, logout_user
+from csv_creator.views import login_user, login_page, logout_user, generate_csv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login_user),
     path('logout/', logout_user),
+    path('generate/', generate_csv),
     path('', login_page),
 ]

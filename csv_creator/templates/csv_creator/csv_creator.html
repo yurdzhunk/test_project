@@ -15,33 +15,42 @@
 </nav>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'csv_creator/style_csv.css' %}">
-<form>
+<form action="/generate/" method="post">
+    {% csrf_token %}
     <p class="label-name">{{username}}</p>
     <p class="label-name">you are welcomed by</p>
     <p class="label-name">CSV-file GENERATOR</p>
   <label>
-    <p class="label-txt">ENTER NUMBER OF RAWS</p>
-    <input type="text" class="input">
+    <p class="label-txt">ENTER NUMBER OF ROWS</p>
+    <input type="text" class="input" id="rows" name="rows" placeholder="rows">
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
   <label>
-    <p class="label-txt">ENTER NUMBER OF COLUMNS</p>
-    <input type="text" class="input">
+    <p class="label-txt">LIST NUMBERS OF COLUMNS SEPERATED BY COMMAS WHICH YOU WANT IN YOUR CSV</p>
+    <p class="label-txt">
+        1 - NAME<br>
+        2 - SURNAME<br>
+        3 - AGE<br>
+        4 - POSITION<br>
+        5 - SALARY<br>
+        EXAMPLE: 3,5 OR 1,4,5
+    </p>
+    <input type="text" class="input" id="columns" name="columns" placeholder="columns">
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
   <label>
-    <p class="label-txt">ENTER YOUR NAME OF FILE</p>
-    <input type="text" class="input">
+    <p class="label-txt">ENTER NAME OF YOUR CSV-FILE</p>
+    <input type="text" class="input" id="filename" name="filename" placeholder="filename">
     <div class="line-box">
       <div class="line"></div>
     </div>
   </label>
   <div>
-      <button type="submit">submit</button>
+      <button type="submit">Submit</button>
   </div>
 </form>
 
