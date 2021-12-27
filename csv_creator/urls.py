@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from generator.views import login_user, login_page
+from csv_creator.views import login_user, login_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),

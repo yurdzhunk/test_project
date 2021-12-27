@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'csv_creator/style_auth.css' %}">
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+      <form method="get" action="/">
+          <p class="fadeIn fourth">Username or password is incorrect</p>
+          <input class="fadeIn fourth" type="submit" value="Try again"></input>
+      </form>
+  </div>
+</div>
+
+</body>
+</html>

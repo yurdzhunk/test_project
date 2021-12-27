@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'generator.urls'
+ROOT_URLCONF = 'csv_creator.urls'
 
 TEMPLATES = [
     {
